@@ -8,9 +8,9 @@
   const tootURL = `${location.origin}/api/v1/statuses`
 
   // Use custom token.
-  chrome.storage.local.get('bearerToken', (item) => {
-    if (item.bearerToken) {
-      bearerToken = item.bearerToken
+  chrome.storage.local.get(location.hostname, (item) => {
+    if (item[location.hostname].bearerToken) {
+      bearerToken = item[location.hostname].bearerToken
     }
   })
 

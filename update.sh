@@ -44,5 +44,5 @@ fi
 # Build
 mkdir -p "${SCRIPT_PATH}build/"
 tmpDir="$(mktemp -d -p "${SCRIPT_PATH}build/")/"
-cd "${SCRIPT_PATH}" && zip -r "${tmpDir}${APP_NAME}-${nextVer}.xpi" icons/ js/ manifest.json
+cd "${SCRIPT_PATH}" && zip -r "${tmpDir}${APP_NAME}-${nextVer}.xpi" icons/ js/ manifest.json option.html option.js
 printf "build: %s\n" "${tmpDir}${APP_NAME}-${nextVer}.xpi" >&2

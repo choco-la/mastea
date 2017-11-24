@@ -1,14 +1,31 @@
 (function () {
   'use strict'
-  const input = document.querySelector('input[name="bearer-token"]')
-  chrome.storage.local.get('bearerToken', (item) => {
-    if (item.bearerToken) {
-      input.value = item.bearerToken
-    }
-  })
+  const instanceList = [
+    'mstdn.jp',
+    'pawoo.net',
+    'music.pawoo.net',
+    'friends.nico'
+  ]
+  for (const instance of instanceList) {
+    // Replace '.' for name attribute.
+    const name = instance.replace(/\./g, '_')
+    const input = document.querySelector(`input[name="${name}"]`)
+    let savedData
+    chrome.storage.local.get(instance, (item) => {
+      if (Object.keys(item).length) {
+        savedData = item[instance]
+        input.value = savedData.bearerToken
+      } else {
+        savedData = {'bearerToken': ''}
+      }
+    })
 
 
-  input.addEventListener('input', () => {
-    chrome.storage.local.set({'bearerToken': input.value})
-  })
+    input.addEventListener('input', () => {
+      savedData.bearerToken = input.value
+      let newData = {}
+      newData[instance] = savedData
+      chrome.storage.local.set(newData)
+    })
+  }
 })()
