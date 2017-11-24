@@ -17,6 +17,7 @@
   },
   "permissions": [
     "webRequest",
+    "storage",
     "https://mstdn.jp/api/v1/statuses",
     "https://pawoo.net/api/v1/statuses",
     "https://music.pawoo.net/api/v1/statuses",
@@ -36,5 +37,8 @@
         "js/extoot.js"
       ]
     }
-  ]
+  ],
+  "options_ui": {
+    "page": "option.html"
+  }
 }
