@@ -2,11 +2,17 @@
 (function() {
   'use strict'
   const initState = JSON.parse(document.getElementById('initial-state').textContent)
-  const bearerToken = initState.meta['access_token']
+  let bearerToken = initState.meta['access_token']
   const defaultPrivacy = initState.compose['default_privacy']
 
   const tootURL = `${location.origin}/api/v1/statuses`
 
+  // Use custom token.
+  chrome.storage.local.get('bearerToken', (item) => {
+    if (item.bearerToken) {
+      bearerToken = item.bearerToken
+    }
+  })
 
   const exttoottext = document.getElementsByClassName('extoottext')[0]
   const exttootbtn = document.getElementsByClassName('extootbtn')[0]
