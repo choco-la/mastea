@@ -3,6 +3,7 @@
   'use strict'
   const initState = JSON.parse(document.getElementById('initial-state').textContent)
   const bearerToken = initState.meta['access_token']
+  const defaultPrivacy = initState.compose['default_privacy']
 
   const tootURL = `${location.origin}/api/v1/statuses`
 
@@ -26,7 +27,7 @@
         media_ids: [],
         sensitive: false,
         spoiler_text: '',
-        visibility: 'public',
+        visibility: defaultPrivacy,
       }
 
       xhr.onloadend = () => {
