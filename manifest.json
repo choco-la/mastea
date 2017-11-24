@@ -1,40 +1,40 @@
 {
-    "manifest_version": 2,
-    "name": "Mastea",
-    "description": "Smart stylesheet for smartphone",
-    "version": "1.1",
-    "homepage_url": "https://github.com/choco-la/mastea",
-    "icons": {
-        "48": "icons/icon48.png",
-        "96": "icons/icon96.png",
-        "128": "icons/icon128.png"
-    },
-    "applications": {
-         "gecko": {
-            "id": "mastea@example.com",
-            "update_url": "https://choco-la.github.io/mastea/update.json"
-         }
-    },
-    "permissions": [
-        "webRequest",
-        "https://mstdn.jp/api/v1/statuses",
-        "https://pawoo.net/api/v1/statuses",
-        "https://music.pawoo.net/api/v1/statuses",
-        "https://friends.nico/api/v1/statuses"
-    ],
-    "content_scripts": [
-        {
-            "matches": [
-                "https://mstdn.jp/web/*",
-                "https://pawoo.net/web/*",
-                "https://music.pawoo.net/web/*",
-                "https://friends.nico/web/*"
-            ],
-            "js": [
-                "js/smartstyle.js",
-                "js/tootbox.js",
-                "js/extoot.js"
-            ]
-        }
-    ]
+  "manifest_version": 2,
+  "name": "Mastea",
+  "description": "Smart stylesheet for smartphone",
+  "version": "1.1",
+  "homepage_url": "https://github.com/choco-la/mastea",
+  "icons": {
+    "48": "icons/icon48.png",
+    "96": "icons/icon96.png",
+    "128": "icons/icon128.png"
+  },
+  "applications": {
+    "gecko": {
+      "id": "mastea@example.com",
+      "update_url": "https://choco-la.github.io/mastea/update.json"
+    }
+  },
+  "permissions": [
+    "webRequest",
+    "https://mstdn.jp/api/v1/statuses",
+    "https://pawoo.net/api/v1/statuses",
+    "https://music.pawoo.net/api/v1/statuses",
+    "https://friends.nico/api/v1/statuses"
+  ],
+  "content_scripts": [
+    {
+      "matches": [
+        "https://mstdn.jp/web/*",
+        "https://pawoo.net/web/*",
+        "https://music.pawoo.net/web/*",
+        "https://friends.nico/web/*"
+      ],
+      "js": [
+        "js/smartstyle.js",
+        "js/tootbox.js",
+        "js/extoot.js"
+      ]
+    }
+  ]
 }
