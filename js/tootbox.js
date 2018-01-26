@@ -11,12 +11,11 @@
 
 
   const extTextArea = document.createElement('textarea')
-  // Overwrite !important.
-  extTextArea.style.cssText = 'height: 3em !important;'
   extTextArea.style.display = 'table-cell'
-  extTextArea.style.width = '100%'
+  extTextArea.style.width = '98%'
   extTextArea.style.minHeight = '0'
   extTextArea.className = 'autosuggest-textarea__textarea extoottext'
+  extTextArea.style.borderRadius = '4px'
   extTextArea.placeholder = 'Toot'
 
 
@@ -30,6 +29,7 @@
 
   const extTootBtn = document.createElement('button')
   extTootBtn.className = 'button button--block extootbtn'
+  extTootBtn.style.fontSize = 'inherit'
   extTootBtn.innerText = 'TOOT!'
 
 
