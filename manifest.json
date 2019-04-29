@@ -21,6 +21,9 @@
     "https://mstdn.jp/api/v1/statuses",
     "https://pawoo.net/api/v1/statuses",
     "https://music.pawoo.net/api/v1/statuses",
+    "https://kiritan.work/api/v1/statuses",
+    "https://best-friends.chat/api/v1/statuses",
+    "https://knzk.me/api/v1/statuses",
     "https://friends.nico/api/v1/statuses"
   ],
   "content_scripts": [
@@ -29,6 +32,9 @@
         "https://mstdn.jp/web/*",
         "https://pawoo.net/web/*",
         "https://music.pawoo.net/web/*",
+        "https://kiritan.work/web/*",
+        "https://best-friends.chat/web/*",
+        "https://knzk.me/web/*",
         "https://friends.nico/web/*"
       ],
       "js": [

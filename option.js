@@ -4,6 +4,9 @@
     'mstdn.jp',
     'pawoo.net',
     'music.pawoo.net',
+    "kiritan.work",
+    "best-friends.chat",
+    "knzk.me",
     'friends.nico'
   ]
   for (const instance of instanceList) {
