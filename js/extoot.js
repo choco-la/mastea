@@ -1,6 +1,20 @@
 /* Register toot posting eventlistener. */
 (function() {
   'use strict'
+
+  const post = (url, token, data) => {
+    const HTTPHeaders = new Headers()
+    HTTPHeaders.append('Content-Type', 'application/json; charset=utf-8')
+    HTTPHeaders.append('Authorization', `Bearer ${token}`)
+    const conf = {
+      body: data,
+      headers: HTTPHeaders,
+      method: 'POST'
+    }
+    const request = new Request(url, conf)
+    return content.fetch(request)
+  }
+
   const initState = JSON.parse(document.getElementById('initial-state').textContent)
   let bearerToken = initState.meta['access_token']
   const defaultPrivacy = initState.compose['default_privacy']
@@ -18,48 +32,16 @@
   const exttootbtn = document.getElementsByClassName('extootbtn')[0]
 
   const sendToot = () => {
-    return new Promise((resolve, reject) => {
-      const xhr = new XMLHttpRequest()
-      xhr.open('POST', tootURL)
-      xhr.setRequestHeader('Authorization', 'Bearer ' + bearerToken)
-      xhr.setRequestHeader('Content-Type', 'application/json; charset=utf-8')
-      xhr.timeout = '3000'
-      xhr.responseType = 'json'
+    const data = {
+      status: exttoottext.value,
+      in_reply_to_id: null,
+      media_ids: [],
+      sensitive: false,
+      spoiler_text: '',
+      visibility: defaultPrivacy,
+    }
 
-
-      const data = {
-        status: exttoottext.value,
-        in_reply_to_id: null,
-        media_ids: [],
-        sensitive: false,
-        spoiler_text: '',
-        visibility: defaultPrivacy,
-      }
-
-      xhr.onloadend = () => {
-        exttootbtn.disabled = ''
-        if (xhr.status >= 200 && xhr.status < 300) {
-          resolve({
-            resp: xhr.response
-          })
-        }
-        else {
-          reject({
-            status: xhr.status,
-            statusText: xhr.statusText
-          })
-        }
-      }
-
-      xhr.onerror = () => {
-        reject({
-          status: xhr.status,
-          statusText: xhr.statusText
-        })
-      }
-
-      xhr.send(JSON.stringify(data))
-    })
+    return post(tootURL, bearerToken, JSON.stringify(data))
   }
 
   const asyncPost = () => {
@@ -67,6 +49,7 @@
     sendToot()
     .then((resp) => {
       console.log(resp)
+      exttootbtn.disabled = ''
       exttoottext.value = ''
     })
     .catch((err) => {
