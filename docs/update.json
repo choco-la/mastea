@@ -16,6 +16,11 @@
 					"version": "1.3.2",
 					"update_link": "https://github.com/choco-la/mastea/releases/download/1.3.2/mastea-1.3.2-an+fx.xpi",
 					"update_hash": "sha256:d23a96d2b1425ee939248bdc0fb6b79eb2fffc4a7b143578ff22d44a7cc31553"
+				},
+				{
+					"version": "1.4.0",
+					"update_link": "https://github.com/choco-la/mastea/releases/download/1.4.0/mastea-1.4.0-an+fx.xpi",
+					"update_hash": "sha256:98d616aa797ddf3e742c45ec3dcbe2e7d76f504b528be3855a156b002bef94c3"
 				}
 			]
 		}
