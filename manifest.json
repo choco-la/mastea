@@ -40,7 +40,8 @@
       "js": [
         "js/smartstyle.js",
         "js/tootbox.js",
-        "js/extoot.js"
+        "js/extoot.js",
+        "js/modify_page.js"
       ]
     }
   ],
