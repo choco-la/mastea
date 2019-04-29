@@ -45,6 +45,7 @@
   }
 
   const asyncPost = () => {
+    if (exttoottext.value.trim() === '') return
     exttootbtn.disabled = 'true'
     sendToot()
     .then((resp) => {
