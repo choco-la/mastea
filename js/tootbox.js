@@ -1,5 +1,5 @@
 /* Create a toot textarea. */
-(function() {
+(() => {
   'use strict'
   const extTootBox = document.createElement('div')
   extTootBox.style.position = 'fixed'

@@ -1,5 +1,5 @@
 /* Inject the stylesheet for smartphone. */
-(function() {
+(() => {
   'use strict'
   const smartStyle = document.createElement('style')
   smartStyle.type = 'text/css'

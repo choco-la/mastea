@@ -1,5 +1,5 @@
 /* Register toot posting eventlistener. */
-(function() {
+(() => {
   'use strict'
 
   const post = (url, token, data) => {
