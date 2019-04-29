@@ -10,10 +10,16 @@
   extTootBox.style.bottom = '0'
 
 
+  const extTextAreaDiv = document.createElement('div')
+  extTextAreaDiv.style.display = 'table-cell'
+  extTextAreaDiv.style.width = '80%'
+
   const extTextArea = document.createElement('textarea')
-  extTextArea.style.display = 'table-cell'
-  extTextArea.style.width = '98%'
-  extTextArea.style.minHeight = '0'
+  extTextArea.style.width = '100%'
+  extTextArea.style.margin = '0px'
+  extTextArea.style.resize = 'vertical'
+  extTextArea.style.boxSizing = "border-box"
+  extTextArea.style.border = "none"
   extTextArea.className = 'autosuggest-textarea__textarea extoottext'
   extTextArea.style.borderRadius = '4px'
   extTextArea.placeholder = 'Toot'
@@ -32,8 +38,8 @@
   extTootBtn.style.fontSize = 'inherit'
   extTootBtn.innerText = 'TOOT!'
 
-
-  extTootBox.appendChild(extTextArea)
+  extTextAreaDiv.appendChild(extTextArea)
+  extTootBox.appendChild(extTextAreaDiv)
   extBtnDiv.appendChild(extTootBtn)
   extTootBox.appendChild(extBtnDiv)
   document.getElementsByClassName('app-body')[0].appendChild(extTootBox)
