@@ -11,6 +11,11 @@
 					"version": "1.3",
 					"update_link": "https://github.com/choco-la/mastea/releases/download/1.3/mastea-1.3-an.fx-android.xpi",
 					"update_hash": "sha256:5496c58185b903b7e830e2ea1829bbb252f4d41554ae6a7bddfc25406d5cf8e4"
+				},
+				{
+					"version": "1.3.2",
+					"update_link": "https://github.com/choco-la/mastea/releases/download/1.3.2/mastea-1.3.2-an+fx.xpi",
+					"update_hash": "sha256:d23a96d2b1425ee939248bdc0fb6b79eb2fffc4a7b143578ff22d44a7cc31553"
 				}
 			]
 		}
